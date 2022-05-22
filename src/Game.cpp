@@ -10,8 +10,8 @@ Game::~Game()
 
 void Game::Draw()
 {
-    player.Draw(player.texture, Rectangle{player.width * frame, player.y, player.width, player.height}, Vector2{player.x, player.y}, RAYWHITE);
-    ground.Draw();
+    DrawTextureRec(player.texture, player.srcRect, player.defaultPos, RAYWHITE);
+    //ground.Draw();
 }
 
 void Game::Update()
