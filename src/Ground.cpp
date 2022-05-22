@@ -2,9 +2,11 @@
 
 Ground::Ground()
 {
-    sourceRect = {0, 0, (float)texture.width, (float)texture.height};
-    position = {10, -300};
     texture = LoadTexture("assets/ground.png");
+    width = texture.width;
+    height = texture.height;
+    x = -2.0f;
+    y = 520.0f;
 }
 
 Ground::~Ground()
@@ -12,7 +14,7 @@ Ground::~Ground()
     UnloadTexture(texture);
 }
 
-void Ground::Draw()
+void Ground::Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint)
 {
-    DrawTextureRec(texture, sourceRect, position, RAYWHITE);
+    DrawTextureRec(tex, src, pos, tint);
 }

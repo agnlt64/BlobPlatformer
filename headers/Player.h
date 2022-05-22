@@ -8,8 +8,6 @@ struct Player
 
     int jumps;
     float x, y, speed, jumpForce, width, height;
-    Rectangle srcRect;
-    Vector2 defaultPos;
     Texture2D texture;
 
     void Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint);
@@ -18,4 +16,5 @@ struct Player
     void Jump();
     void MoveRight();
     void MoveLeft();
+    void Stop();
 };

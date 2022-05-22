@@ -7,8 +7,7 @@ struct Ground
     ~Ground();
 
     Texture2D texture;
-    Rectangle sourceRect;
-    Vector2 position;
+    float width, height, x, y;
 
-    void Draw();
+    void Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint);
 };
