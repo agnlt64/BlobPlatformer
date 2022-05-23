@@ -2,3 +2,5 @@ platform
 platform2
 .vscode
 .DS_Store
+.gitignore
+platform_token
