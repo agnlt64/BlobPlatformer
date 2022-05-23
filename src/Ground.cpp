@@ -16,5 +16,5 @@ Ground::~Ground()
 
 void Ground::Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint)
 {
-    DrawTextureRec(tex, src, pos, tint);
+    TextureManager::Draw(tex, src, pos, tint);
 }
