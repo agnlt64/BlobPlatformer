@@ -1,6 +1,6 @@
 #pragma once
 #include <raylib.h>
-#include "../headers/TextureManager.h"
+#include "TextureManager.h"
 
 struct Player
 {
@@ -8,13 +8,15 @@ struct Player
     ~Player();
 
     int jumps;
+    KeyboardKey lastKeyPressed;
     float x, y, speed, jumpForce, width, height;
     Texture2D texture;
 
-    void Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint);
+    void DrawAndAnimate(Texture2D tex, Rectangle src, Vector2 pos, Color tint);
     void Update();
     void Reset();
     void Jump();
+    void Idle();
     void MoveRight();
     void MoveLeft();
     void Stop();

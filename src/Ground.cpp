@@ -14,7 +14,7 @@ Ground::~Ground()
     UnloadTexture(texture);
 }
 
-void Ground::Draw(Texture2D tex, Rectangle src, Vector2 pos, Color tint)
+void Ground::Draw()
 {
-    TextureManager::Draw(tex, src, pos, tint);
+    TextureManager::Draw(texture, Rectangle{0, 0, width, height}, Vector2{x, y}, RAYWHITE);
 }

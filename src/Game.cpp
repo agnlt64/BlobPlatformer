@@ -12,8 +12,7 @@ Game::~Game()
 
 void Game::Draw()
 {
-    player.Draw(player.texture, Rectangle{player.width * frame, 0, player.width, player.height}, Vector2{player.x, player.y}, RAYWHITE);
-    ground.Draw(ground.texture, Rectangle{0, 0, ground.width, ground.height}, Vector2{ground.x, ground.y}, RAYWHITE);
+    ground.Draw();
 }
 
 void Game::Update()
