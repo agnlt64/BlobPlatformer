@@ -53,6 +53,8 @@ void Player::Idle()
 
 void Player::Jump()
 {
+    //TODO: animate the jump
+    // DrawAndAnimate(texture, Rectangle{width, height / 3, width, height}, Vector2{x, y}, RAYWHITE);
     y -= jumpForce;
     jumps++;
 }

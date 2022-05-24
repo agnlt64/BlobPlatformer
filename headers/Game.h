@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Ground.h"
+#include "Background.h"
 #include <raylib.h>
 
 struct Game
@@ -14,6 +15,7 @@ struct Game
     float timer;
     int maxFrames, frame;
 
+    Background background;
     Player player;
     Ground ground;
 };

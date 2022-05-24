@@ -12,6 +12,7 @@ Game::~Game()
 
 void Game::Draw()
 {
+    background.Draw();
     ground.Draw();
 }
 
