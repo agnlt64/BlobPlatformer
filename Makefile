@@ -23,12 +23,4 @@ all: $(EXEC)
 $(EXEC): $(OBJS) $(HDRS) Makefile
 	$(CC) -o $@ $(OBJS) $(CFLAGS)
 
-#build objects files
-# $(OBJS): $(@:.o=.c) $(HDRS) Makefile
-# 	$(CC) -o $@ $(@:.o=.c) -c $(CFLAGS)
-
- # clean the workspace
-clean:
-	echo Dangerous command. Has been disabled forever.
-
 .PHONY: all clean
