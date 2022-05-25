@@ -1,5 +1,4 @@
 #include "../headers/Player.h"
-#include <iostream>
 
 Player::Player()
 {
@@ -7,7 +6,7 @@ Player::Player()
     width = texture.width / 3;
     height = texture.height / 3;
     x = 0.0f;
-    y = 543 - height;
+    y = 536 - height;
     jumps = 0;
     speed = 130.0f;
     jumpForce = 100.0f;
