@@ -2,7 +2,7 @@
 CC := g++
 
 # flags
-CFLAGS := `pkg-config --libs --cflags raylib` -std=c++20 -o platform2
+CFLAGS := `pkg-config --libs --cflags raylib` -std=c++20
 
 # headers
 HDRS := headers/*.h
@@ -14,7 +14,7 @@ SRCS := src/*.cpp
 OBJS := $(SRCS:.c=.o)
 
 # executable
-EXEC := game
+EXEC := blob
 
 # default config
 all: $(EXEC)
