@@ -15,7 +15,7 @@ Then build it using the Makefile: <br />
 `./blob`<br />
 
 # Build instructions for Linux
-Install raylib for your Linux distribution from <a href="https://github.com/raysan5/raylib">here<a><br/>.
+Install raylib for your Linux distribution from <a href="https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux">here<a><br/>.
 Clone the repo:<br />
 `git clone https://github.com/ABFStudio/BlobPlatformer.git`<br />
 Build: <br />

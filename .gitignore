@@ -3,5 +3,5 @@ blob
 .vscode
 .DS_Store
 .gitignore
-platform_token
-sprites.pptx
+platform_token.txt
+assets/sprites.pptx

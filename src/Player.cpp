@@ -8,6 +8,7 @@ Player::Player()
     x = 0.0f;
     y = 536 - height;
     jumps = 0;
+    maxJumps = 1;
     speed = 130.0f;
     jumpForce = 100.0f;
     lastKeyPressed = KEY_RIGHT;
@@ -47,15 +48,30 @@ void Player::Idle()
     {
         DrawAndAnimate(texture, Rectangle{width, height, width, height}, Vector2{x, y}, RAYWHITE);
     }
-    
 }
 
-void Player::Jump()
+void Player::JumpRight()
 {
-    //TODO: animate the jump
-    // DrawAndAnimate(texture, Rectangle{width, height / 3, width, height}, Vector2{x, y}, RAYWHITE);
+    // DrawAndAnimate(texture, Rectangle{width / 3, height / 6, width, height}, Vector2{x, y}, RAYWHITE);
     y -= jumpForce;
     jumps++;
+}
+
+void Player::JumpLeft()
+{
+    // DrawAndAnimate(texture, Rectangle{width / 4, height / 6, width, height}, Vector2{x, y}, RAYWHITE);
+    y -= jumpForce;
+    jumps++;
+}
+
+void Player::EnableDoubleJump()
+{
+    maxJumps = 2;
+}
+
+void Player::DisableDoubleJump()
+{
+    maxJumps = 1;
 }
 
 void Player::Stop()
@@ -81,13 +97,29 @@ void Player::Update()
     {
         MoveLeft();
     }
-    else if (IsKeyDown(KEY_SPACE) and jumps < 1)
+    else if (IsKeyDown(KEY_SPACE) and jumps < maxJumps and lastKeyPressed == KEY_LEFT)
     {
-        Jump();
+        JumpLeft();
     }
+    else if (IsKeyDown(KEY_SPACE) and jumps < maxJumps and lastKeyPressed == KEY_RIGHT)
+    {
+        JumpRight();
+    }
+    
     else if (IsKeyDown(KEY_R))
     {
         Reset();
+        Idle();
+    }
+    else if (IsKeyDown(KEY_J))
+    {
+        EnableDoubleJump();
+        Idle();
+    }
+    else if (IsKeyDown(KEY_E))
+    {
+        DisableDoubleJump();
+        Idle();
     }
     else
     {
