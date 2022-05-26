@@ -7,9 +7,9 @@ struct Player
     Player();
     ~Player();
 
-    int jumps, maxJumps;
-    float x, y, speed, jumpForce, width, height;
-
+    int jumps, maxJumps, frame, timer;
+    float x, y, speed, jumpForce, width, height, defaultX, defaultY;
+    
     KeyboardKey lastKeyPressed;
     Texture2D texture;
 
@@ -24,4 +24,5 @@ struct Player
     void Stop();
     void EnableDoubleJump();
     void DisableDoubleJump();
+    void CheckTimer();
 };

@@ -1,13 +1,18 @@
 #include "../headers/Player.h"
+#include <iostream>
 
 Player::Player()
 {
     texture = LoadTexture("assets/player.png");
     width = texture.width / 3;
-    height = texture.height / 3;
-    x = 0.0f;
-    y = 536 - height;
+    height = texture.height / 3.1;
+    defaultX = 0.0f;
+    defaultY = 536 - height;
+    x = defaultX;
+    y = defaultY;
     jumps = 0;
+    frame = 0;
+    timer = 0;
     maxJumps = 1;
     speed = 130.0f;
     jumpForce = 100.0f;
@@ -27,14 +32,14 @@ void Player::DrawAndAnimate(Texture2D tex, Rectangle src, Vector2 pos, Color tin
 void Player::MoveLeft()
 {
     x -= GetFrameTime() * speed;
-    DrawAndAnimate(texture, Rectangle{width, height, width, height}, Vector2{x, y}, RAYWHITE);
+    DrawAndAnimate(texture, Rectangle{width * frame, height, width, height}, Vector2{x, y}, RAYWHITE);
     lastKeyPressed = KEY_LEFT;
 }
 
 void Player::MoveRight()
 {
     x += GetFrameTime() * speed;
-    DrawAndAnimate(texture, Rectangle{width, 0, width, height}, Vector2{x, y}, RAYWHITE);
+    DrawAndAnimate(texture, Rectangle{width * frame, 0, width, height}, Vector2{x, y}, RAYWHITE);
     lastKeyPressed = KEY_RIGHT;
 }
 
@@ -42,11 +47,11 @@ void Player::Idle()
 {
     if (lastKeyPressed == KEY_RIGHT)
     {
-        TextureManager::Draw(texture, Rectangle{width, 0, width, height}, Vector2{x, y}, RAYWHITE);
+        TextureManager::Draw(texture, Rectangle{width * frame, 0, width, height}, Vector2{x, y}, RAYWHITE);
     }
     else if (lastKeyPressed == KEY_LEFT)
     {
-        DrawAndAnimate(texture, Rectangle{width, height, width, height}, Vector2{x, y}, RAYWHITE);
+        DrawAndAnimate(texture, Rectangle{width * frame, height, width, height}, Vector2{x, y}, RAYWHITE);
     }
 }
 
@@ -82,9 +87,22 @@ void Player::Stop()
 
 void Player::Reset()
 {
-    x = 0.0f;
-    y = 543 - height;
+    x = defaultX;
+    y = defaultY;
     jumps = 0;
+}
+
+void Player::CheckTimer()
+{
+    for(int i = 0; i <= 5; i++)
+    {
+        timer++;
+    }
+    if(timer >= 5)
+    {
+        y = defaultY;
+    }
+    y = defaultY;
 }
 
 void Player::Update()
@@ -99,10 +117,12 @@ void Player::Update()
     }
     else if (IsKeyDown(KEY_SPACE) and jumps < maxJumps and lastKeyPressed == KEY_LEFT)
     {
+        CheckTimer();
         JumpLeft();
     }
     else if (IsKeyDown(KEY_SPACE) and jumps < maxJumps and lastKeyPressed == KEY_RIGHT)
     {
+        CheckTimer();
         JumpRight();
     }
     
@@ -130,5 +150,4 @@ void Player::Update()
     {
         Stop();
     }
-    
 }

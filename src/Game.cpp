@@ -4,7 +4,7 @@ Game::Game()
 {
     timer = 0.0f;
     maxFrames = player.texture.width / player.width;
-    frame = 0;
+    // frame = 0;
 }
 
 Game::~Game()
@@ -23,10 +23,10 @@ void Game::Update()
     if(timer >= 0.2f)
     {
         timer = 0.0f;
-        frame++;
+        player.frame++;
     }
 
-    frame %= maxFrames;
+    player.frame %= maxFrames;
 
     player.Update();
 }
