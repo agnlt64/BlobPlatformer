@@ -1,6 +1,7 @@
 #pragma once
 #include <raylib.h>
-#include "TextureManager.h"
+#include "../headers/Background.h"
+#include "../headers/TextureManager.h"
 
 struct Player
 {
@@ -12,6 +13,7 @@ struct Player
     
     KeyboardKey lastKeyPressed;
     Texture2D texture;
+    Background bg;
 
     void DrawAndAnimate(Texture2D tex, Rectangle src, Vector2 pos, Color tint);
     void Update();

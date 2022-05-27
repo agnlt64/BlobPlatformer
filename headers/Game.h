@@ -13,7 +13,7 @@ struct Game
     void Draw();
 
     float timer;
-    int maxFrames/*, frame*/;
+    int maxFrames;
 
     Background background;
     Player player;
