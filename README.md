@@ -11,7 +11,7 @@ Then build the code: <br/>
 Install Homebrew: <br/>
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 Install raylib with Homebrew: <br/>
-`brew install raylib`
+`brew install raylib` <br/>
 Next clone this repo: <br />
 `git clone https://github.com/ABFStudio/BlobPlatformer.git`<br />
 Then build it using the Makefile: <br />
