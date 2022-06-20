@@ -4,8 +4,9 @@
 #include "Background.h"
 #include <raylib.h>
 
-struct Game
+class Game
 {
+public:
     Game();
     ~Game();
 

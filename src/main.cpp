@@ -22,6 +22,5 @@ int main(int argc, char** argv)
 
     CloseWindow();
     
-    return 0;
-    
+    return 0;   
 }

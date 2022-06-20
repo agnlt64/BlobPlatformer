@@ -1,9 +1,11 @@
 #pragma once
 #include <raylib.h>
+#include <iostream>
 #include "TextureManager.h"
 
-struct Background
+class Background
 {
+public:
     Background();
     ~Background();
 

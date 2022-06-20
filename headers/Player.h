@@ -1,10 +1,11 @@
 #pragma once
 #include <raylib.h>
-#include "../headers/Background.h"
-#include "../headers/TextureManager.h"
+#include "Background.h"
+#include "TextureManager.h"
 
-struct Player
+class Player
 {
+public:
     Player();
     ~Player();
 

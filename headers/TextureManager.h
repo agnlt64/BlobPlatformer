@@ -1,8 +1,9 @@
 #pragma once
 #include <raylib.h>
 
-struct TextureManager
+class TextureManager
 {
+public:
     TextureManager();
     ~TextureManager();
 

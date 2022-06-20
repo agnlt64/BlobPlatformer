@@ -2,8 +2,9 @@
 #include <raylib.h>
 #include "TextureManager.h"
 
-struct Ground
+class Ground
 {
+public:
     Ground();
     ~Ground();
 
