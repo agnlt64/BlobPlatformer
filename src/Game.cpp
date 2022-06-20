@@ -9,6 +9,18 @@ Game::Game()
 Game::~Game()
 {}
 
+void Game::Setup()
+{
+    InitWindow(WIDTH, HEIGHT, "Platformer");
+    SetTargetFPS(60);
+}
+
+void Game::Init()
+{
+    ClearBackground(SKYBLUE);
+    BeginDrawing();
+}
+
 void Game::Draw()
 {
     background.Draw();

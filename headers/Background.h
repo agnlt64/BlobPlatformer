@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BACKGROUND_H
+#define BACKGROUND_H
+
 #include <raylib.h>
 #include <iostream>
 #include "TextureManager.h"
@@ -14,3 +16,5 @@ public:
 
     void Draw();
 };
+
+#endif /*BACKGROUND_H*/

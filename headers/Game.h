@@ -1,8 +1,13 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
+
 #include "Player.h"
 #include "Ground.h"
 #include "Background.h"
 #include <raylib.h>
+
+#define WIDTH 800
+#define HEIGHT 600
 
 class Game
 {
@@ -12,6 +17,8 @@ public:
 
     void Update();
     void Draw();
+    void Init();
+    void Setup();
 
     float timer;
     int maxFrames;
@@ -20,3 +27,5 @@ public:
     Player player;
     Ground ground;
 };
+
+#endif /*GAME_H*/

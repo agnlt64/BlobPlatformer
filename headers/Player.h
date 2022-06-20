@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 #include <raylib.h>
 #include "Background.h"
 #include "TextureManager.h"
@@ -29,3 +30,5 @@ public:
     void DisableDoubleJump();
     void CheckTimer();
 };
+
+#endif /*PLAYER_H*/
